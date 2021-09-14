@@ -5,9 +5,9 @@ fetch(base_url)
     .then((groceryData) => groceryData.forEach((grocery) => renderGrocery(grocery)))
 
 function renderGrocery(groceryItem){
-    const item = document.createElement('span');
+    const item = document.createElement('span'); // create span element inside html and assign to item variable
 
-    item.textContent = groceryItem.name;
+    item.textContent = groceryItem.name; 
 
     const groceryGallery = document.getElementById('grocery_bar');
 
@@ -18,7 +18,7 @@ function renderGrocery(groceryItem){
         itemName.textContent = groceryItem.name;
 
         const itemPrice = document.getElementById('price');
-        itemPrice.textContent = groceryItem.price;
+        itemPrice.textContent = `$${groceryItem.price}`;
 
         const itemImg = document.getElementById('image');
         itemImg.src = groceryItem.image;
