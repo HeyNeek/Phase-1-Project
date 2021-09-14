@@ -1,0 +1,42 @@
+#logo{
+    text-align: center;
+    background-color: #004E36;
+    color: white;
+    padding: 0.5em;
+    font-family: 'Work Sans', sans-serif;;
+}
+
+#grocery_bar{
+    height: 15vh;
+    background: #2C8746;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 3vh;
+}
+
+#grocery_bar span{
+    padding: 1%;
+    height: 80%;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    font-size: 3vh;
+    align-items: center;
+    border-radius: 2em;
+    border: 1px solid white;
+}
+
+#image{
+    width: 300px;
+    height: 300px;
+}
+
+#detailed_info{
+    height: 550px;
+    padding: 30px;
+    font-size: 24px;
+    border: solid;
+    text-align: center;
+  }
+
