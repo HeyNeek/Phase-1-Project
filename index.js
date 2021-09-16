@@ -1,10 +1,10 @@
 // creating variable to hold our url to json data
 const base_url = 'http://localhost:3000/groceries'; 
-// creating variable and assigning our html button to it
+// creating variable and assigning our html add button to it
 const addBtn = document.getElementById('add_button'); 
 // creating variable that we will use later for our Add to cart button function, it's purpose to grab the correct object values, a state that switch to other states
 let currentSelectedItem; 
-
+// creating variable and assigning our html delete button to it
 const deleteBtn = document.getElementById('clear_button');
 
 //fetching our grocery json data
@@ -38,8 +38,8 @@ function renderGrocery(groceryItem){
         currentSelectedItem = groceryItem;
         
     })
-
 }
+
 //creating a variable for our add to cart button function, to accumulate the total price
 let totalPrice = 0;
  //creating a variable and assigning it to the span html element with the id of total_price
@@ -55,7 +55,7 @@ addBtn.addEventListener('click', function(){
     //assigning the textContent of our groceryCartPrice variable to the value of the totalPrice variable
     groceryCartPrice.textContent = `$${totalPrice}`;
 })
-
+//adding a click event listener on our deleteBtn variable
 deleteBtn.addEventListener('click', function(){
     //resetting the totalPrice to 0
     totalPrice = 0;
