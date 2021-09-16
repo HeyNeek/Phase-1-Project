@@ -36,6 +36,9 @@ function renderGrocery(groceryItem){
         itemImg.src = groceryItem.image;//assigning appropriate source to the image variable
         //assigning our blank state variable to the value of the object being clicked on
         currentSelectedItem = groceryItem;
+
+        item.addEventListener('mouseenter', () => item.innerText = 'BUY ME!');
+        item.addEventListener('mouseleave', () => item.textContent = groceryItem.name);
         
     })
 }
