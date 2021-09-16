@@ -5,6 +5,8 @@ const addBtn = document.getElementById('add_button');
 // creating variable that we will use later for our Add to cart button function, it's purpose to grab the correct object values, a state that switch to other states
 let currentSelectedItem; 
 
+const deleteBtn = document.getElementById('clear_button');
+
 //fetching our grocery json data
 fetch(base_url)
     .then((resp) => resp.json())//converting our json data 
@@ -40,6 +42,9 @@ function renderGrocery(groceryItem){
 }
 //creating a variable for our add to cart button function, to accumulate the total price
 let totalPrice = 0;
+ //creating a variable and assigning it to the span html element with the id of total_price
+let groceryCartPrice = document.getElementById('total_price');
+
 //adding a click event listener on our addBtn variable 
 addBtn.addEventListener('click', function(){
     //creating a variable that holds the grab the price property of the currently selected item state in our other click event listener
@@ -47,7 +52,15 @@ addBtn.addEventListener('click', function(){
     //reassigning the value of our global totalPrice variable with some addition
     totalPrice = totalPrice + price;
     console.log(totalPrice);//logging the total price just to make sure everything's working right
-    //creating a variable and assigning it to the span html element with the id of total_price
-    let groceryCartPrice = document.getElementById('total_price');
-    groceryCartPrice.textContent = `$${totalPrice}`;//assigning the textContent of our groceryCartPrice variable to the value of the totalPrice variable
+    //assigning the textContent of our groceryCartPrice variable to the value of the totalPrice variable
+    groceryCartPrice.textContent = `$${totalPrice}`;
+})
+
+deleteBtn.addEventListener('click', function(){
+    //resetting the totalPrice to 0
+    totalPrice = 0;
+    //logging the totalPrice just to make sure it works
+    console.log(totalPrice);
+    //showing the changes on the webpage by reassigning the textContent of groceryCartPrice
+    groceryCartPrice.textContent = `$${totalPrice}`;
 })
