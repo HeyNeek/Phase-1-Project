@@ -37,10 +37,12 @@ function renderGrocery(groceryItem){
         //assigning our blank state variable to the value of the object being clicked on
         currentSelectedItem = groceryItem;
 
-        item.addEventListener('mouseenter', () => item.innerText = 'BUY ME!');
-        item.addEventListener('mouseleave', () => item.textContent = groceryItem.name);
+
         
     })
+
+    item.addEventListener('mouseenter', () => item.innerText = 'BUY ME!');
+    item.addEventListener('mouseleave', () => item.textContent = groceryItem.name);
 }
 
 //creating a variable for our add to cart button function, to accumulate the total price
