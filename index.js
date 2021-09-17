@@ -41,7 +41,7 @@ function renderGrocery(groceryItem){
         
     })
 
-    item.addEventListener('mouseenter', () => item.innerText = 'BUY ME!');
+    item.addEventListener('mouseenter', () => item.innerHTML = "<strong>BUY ME!</strong>");
     item.addEventListener('mouseleave', () => item.textContent = groceryItem.name);
 }
 
